@@ -191,6 +191,8 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  { 'max397574/better-escape.nvim' },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -267,6 +269,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+require('better_escape').setup {
+  mapping = {"jk"}
+}
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
