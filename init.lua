@@ -77,10 +77,10 @@ require('lazy').setup({
     'alexghergh/nvim-tmux-navigation',
     config = function()
       local nvim_tmux_nav = require('nvim-tmux-navigation')
-      vim.keymap.set('n', '<leader>wh', nvim_tmux_nav.NvimTmuxNavigateLeft)
-      vim.keymap.set('n', '<leader>wj', nvim_tmux_nav.NvimTmuxNavigateDown)
-      vim.keymap.set('n', '<leader>wk', nvim_tmux_nav.NvimTmuxNavigateUp)
-      vim.keymap.set('n', '<leader>wl', nvim_tmux_nav.NvimTmuxNavigateRight)
+      vim.keymap.set('n', '<leader>wh', nvim_tmux_nav.NvimTmuxNavigateLeft, { desc = 'Move to window left of current' })
+      vim.keymap.set('n', '<leader>wj', nvim_tmux_nav.NvimTmuxNavigateDown, { desc = 'Move to window below current' })
+      vim.keymap.set('n', '<leader>wk', nvim_tmux_nav.NvimTmuxNavigateUp, { desc = 'Move to window above current' })
+      vim.keymap.set('n', '<leader>wl', nvim_tmux_nav.NvimTmuxNavigateRight, { desc = 'Move to window right of current' })
     end
   },
 
@@ -270,6 +270,7 @@ vim.o.termguicolors = true
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 vim.keymap.set({ 'n' }, '<leader>bd', '<cmd>bd<cr>', { silent = true })
+vim.keymap.set('i', '<c-space>', '<c-x><c-o>', { silent = true })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
